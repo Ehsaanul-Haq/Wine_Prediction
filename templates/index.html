@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🍷 Wine Quality Prediction</h1>
+
+<p class="description">
+    Enter the wine characteristics to predict its quality
+</p>
+
+<form id="wineForm" action="/predict" method="POST">
+
+    <div class="form-grid">        
+        
+        <div class="form-group">
+            <label for="fixed_acidity">Fixed Acidity</label>
+            <div class="slider-wrapper">
+                <input 
+                    type="range" 
+                    step="0.1" 
+                    min="4.0" 
+                    max="16.0" 
+                    value="7.4"
+                    name="fixed_acidity" 
+                    id="fixed_acidity" required 
+                       oninput="document.getElementById('val_fixed_acidity').textContent = this.value">
+                <span class="slider-value" id="val_fixed_acidity">7.4</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="volatile_acidity">Volatile Acidity</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.01" min="0.0" max="2.0" value="0.70" name="volatile_acidity" id="volatile_acidity" required 
+                       oninput="document.getElementById('val_volatile_acidity').textContent = this.value">
+                <span class="slider-value" id="val_volatile_acidity">0.70</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="citric_acid">Citric Acid</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.01" min="0.0" max="1.0" value="0.00" name="citric_acid" id="citric_acid" required 
+                       oninput="document.getElementById('val_citric_acid').textContent = this.value">
+                <span class="slider-value" id="val_citric_acid">0.00</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="residual_sugar">Residual Sugar</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.1" min="0.0" max="20.0" value="1.9" name="residual_sugar" id="residual_sugar" required 
+                       oninput="document.getElementById('val_residual_sugar').textContent = this.value">
+                <span class="slider-value" id="val_residual_sugar">1.9</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="chlorides">Chlorides</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.001" min="0.0" max="0.5" value="0.076" name="chlorides" id="chlorides" required 
+                       oninput="document.getElementById('val_chlorides').textContent = this.value">
+                <span class="slider-value" id="val_chlorides">0.076</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="free_sulfur_dioxide">Free Sulfur Dioxide</label>
+            <div class="slider-wrapper">
+                <input type="range" step="1" min="1" max="100" value="11" name="free_sulfur_dioxide" id="free_sulfur_dioxide" required 
+                       oninput="document.getElementById('val_free_sulfur_dioxide').textContent = this.value">
+                <span class="slider-value" id="val_free_sulfur_dioxide">11</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="total_sulfur_dioxide">Total Sulfur Dioxide</label>
+            <div class="slider-wrapper">
+                <input type="range" step="1" min="1" max="300" value="34" name="total_sulfur_dioxide" id="total_sulfur_dioxide" required 
+                       oninput="document.getElementById('val_total_sulfur_dioxide').textContent = this.value">
+                <span class="slider-value" id="val_total_sulfur_dioxide">34</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="density">Density</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.0001" min="0.9900" max="1.0050" value="0.9978" name="density" id="density" required 
+                       oninput="document.getElementById('val_density').textContent = this.value">
+                <span class="slider-value" id="val_density">0.9978</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ph">pH</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.01" min="2.5" max="4.5" value="3.51" name="ph" id="ph" required 
+                       oninput="document.getElementById('val_ph').textContent = this.value">
+                <span class="slider-value" id="val_ph">3.51</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="sulphates">Sulphates</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.01" min="0.0" max="2.0" value="0.56" name="sulphates" id="sulphates" required 
+                       oninput="document.getElementById('val_sulphates').textContent = this.value">
+                <span class="slider-value" id="val_sulphates">0.56</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="alcohol">Alcohol</label>
+            <div class="slider-wrapper">
+                <input type="range" step="0.1" min="8.0" max="15.0" value="9.4" name="alcohol" id="alcohol" required 
+                       oninput="document.getElementById('val_alcohol').textContent = this.value">
+                <span class="slider-value" id="val_alcohol">9.4</span>
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit">
+        Predict Wine Quality
+    </button>
+
+</form>
+
+</div>
+
+</body>
+</html>

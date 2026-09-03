@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Result</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<div class="container">
+<h1>🍷 Wine Quality Result</h1>
+
+<div class="quality-title">
+    Predicted Wine Quality
+</div>
+
+<h2> {{ quality }} </h2> 
+
+<p> {{ rating }} </p>
+
+<a href="/">
+    <button class="back-button">
+        Predict Another Wine
+    </button> 
+</a>
+
+
+</div> 
+</body>
+</html>
