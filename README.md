@@ -20,4 +20,4 @@ The project features a premium, dark-themed user interface designed for intuitiv
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/wine-quality-prediction.git](https://github.com/yourusername/wine-quality-prediction.git)
+   git clone [https://github.com/Ehsaanul-Haq/wine-quality-prediction.git](https://github.com/Ehsaanul-Haq/wine-quality-prediction.git)
